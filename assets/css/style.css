@@ -401,7 +401,7 @@ button {
 
 .skills_icon,
 .skills_arrow {
-  font-size: 32px;
+  /* font-size: 32px; */
   font-weight: bolder;
   color: var(--first-color);
 }
