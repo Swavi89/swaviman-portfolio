@@ -49,7 +49,6 @@ skillHeaderArr.forEach((element, idx) => {
   });
 });
 
-
 // QUALIFICATION TABS
 let education = document.getElementById("education");
 let work = document.getElementById("work");
@@ -62,8 +61,8 @@ educationheader.addEventListener("click", () => {
   if (!condition1) {
     education.classList.remove("qualification-inactive");
     work.classList.add("qualification-inactive");
-    workheader.style.color = "var(--text-colour)";
-    educationheader.style.color = "var(--first-colour)";
+    workheader.style.color = "#6d6a7c";
+    educationheader.style.color = "#12c2f9";
   }
 });
 workheader.addEventListener("click", () => {
@@ -71,8 +70,8 @@ workheader.addEventListener("click", () => {
   if (!condition2) {
     work.classList.remove("qualification-inactive");
     education.classList.add("qualification-inactive");
-    educationheader.style.color = "var(--text-colour)";
-    workheader.style.color = "var(--first-colour)";
+    educationheader.style.color = "#6d6a7c";
+    workheader.style.color = "#12c2f9";
   }
 });
 
@@ -92,7 +91,6 @@ let swiper = new Swiper(".mySwiper", {
   mousewheel: true,
   keyboard: true,
 });
-
 
 // SCROLL SECTIONS ACTIVE LINK
 const sections = document.querySelectorAll("section[id]");
@@ -137,7 +135,8 @@ window.addEventListener("scroll", scrollUpfunc);
 // DARK/LIGHT THEME
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
-const iconTheme = "fa-sun";
+const iconMoon = "fa-moon";
+const iconSun = "fa-sun";
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
@@ -147,23 +146,38 @@ const selectedIcon = localStorage.getItem("selected-icon");
 const getCurrentTheme = () =>
   document.body.classList.contains(darkTheme) ? "dark" : "light";
 const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "fa-moon" : "fa-sun";
+  themeButton.classList.contains(iconSun) ? iconSun : iconMoon;
 
 if (selectedTheme) {
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
     darkTheme
   );
-  themeButton.classList[selectedIcon === "fa-moon" ? "add" : "remove"](
-    iconTheme
-  );
+  themeButton.classList.remove(iconMoon, iconSun);
+  themeButton.classList.add(selectedIcon === iconSun ? iconSun : iconMoon);
 }
 
 // Activate/Deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
   // Add or remove the dark icon/theme
   document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
+  themeButton.classList.toggle(iconSun);
+  themeButton.classList.toggle(iconMoon);
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+});
+
+// Excel Form code
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbxeIPFkUbqqvXjtSygYlEWxhwGSP-ldh_P-LdScwm4W4jPLA8Pxt5mN-WnyAvJAq19Etw/exec";
+const form = document.forms["google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      alert("Thanks for contacting us..! We will Contact You Soon...");
+      window.location.reload();
+    })
+    .catch((error) => console.error("Error!", error.message));
 });
