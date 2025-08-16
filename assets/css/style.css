@@ -47,7 +47,7 @@
 }
 
 /* Variables Dark Theme */
-/* body.dark-theme {
+body.dark-theme {
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
   --title-color: hsl(var(--hue-color), 8%, 95%);
   --text-color: hsl(var(--hue-color), 8%, 75%);
@@ -56,24 +56,23 @@
   --container-color: hsl(var(--hue-color), 29%, 16%);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-} */
+}
 
 /* Button Dark/Light */
-/* .nav_btns {
+.nav_btns {
   display: flex;
   align-items: center;
 }
 
 .change-theme {
-  font-size: 1.25rem;
   color: var(--title-color);
-  margin-right: var(--mb-1);
+  margin-right: 16px;
   cursor: pointer;
 }
 
 .change-theme:hover {
   color: var(--first-color);
-} */
+}
 
 /* BASE */
 * {
@@ -230,7 +229,6 @@ button {
   position: absolute;
   right: 20.8px;
   bottom: 8px;
-  font-size: 24px;
   cursor: pointer;
   color: var(--first-color);
 }
@@ -323,7 +321,7 @@ button {
 }
 
 .home_scroll-mouse {
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .home_scroll-name {
@@ -331,10 +329,6 @@ button {
   color: var(--title-color);
   font-weight: var(--font-medium);
   margin-right: 4px;
-}
-
-.home_scroll-arrow {
-  font-size: 20px;
 }
 
 /* BUTTONS */
@@ -352,7 +346,6 @@ button {
 }
 
 .button_icon {
-  font-size: 20px;
   margin-left: 8px;
   transition: 0.3s;
 }
@@ -365,7 +358,7 @@ button {
 
 /* ABOUT */
 .about_img {
-  width: 200px;
+  width: 250px;
   border-radius: 8px;
   justify-self: center;
   align-self: center;
@@ -489,7 +482,7 @@ button {
 }
 
 .qualification_icon {
-  font-size: 1.8rem;
+  font-size: 24px;
   margin-right: 12px;
 }
 
@@ -573,7 +566,7 @@ button {
 }
 
 .swiper-portfolio-icon {
-  font-size: 2rem;
+  font-size: 24px;
   color: var(--first-color);
 }
 
@@ -611,9 +604,10 @@ button {
 }
 
 .contact_icon {
-  font-size: 2rem;
+  font-size: 24px;
   color: var(--first-color);
   margin-right: 12px;
+  margin-top: 12px;
 }
 
 .contact_title {
@@ -710,7 +704,7 @@ button {
 .footer_copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: var(--text-color);
   margin-top: 48px;
 }
 
@@ -721,7 +715,7 @@ button {
   bottom: -20%;
   background-color: var(--first-color);
   opacity: 0.8;
-  padding: 0 0.3rem;
+  padding: 4px;
   border-radius: 0.4rem;
   z-index: 10;
   transition: 0.4s;
@@ -732,7 +726,6 @@ button {
 }
 
 .scrollup_icon {
-  font-size: 1.5rem;
   color: #fff;
 }
 
@@ -860,7 +853,7 @@ button {
   .nav_icon,
   .nav_close,
   .nav_toggle {
-    display: none;
+    display: none !important;
   }
 
   .nav_list {
@@ -978,10 +971,6 @@ button {
 
   .portfolio_content {
     column-gap: 5rem;
-  }
-
-  .swiper-portfolio-icon {
-    font-size: 3.5rem;
   }
 
   .swiper-button-prev {
