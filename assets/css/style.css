@@ -754,8 +754,8 @@ button {
 /* For small devices */
 @media screen and (max-width: 350px) {
   .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
   .nav_menu {
